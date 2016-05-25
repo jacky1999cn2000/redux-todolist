@@ -25,7 +25,7 @@ class AddTodo extends React.Component {
       <View style={styles.wrapper}>
         <TextInput
           autoFocus={true}
-          autoCapitalize="sentences"
+          autoCapitalize="none"
           placeholder="What to do next?"
           value={this.state.item}
           onChangeText={(item) => this.setState({item})}
