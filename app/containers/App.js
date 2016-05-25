@@ -11,7 +11,7 @@ import {
 import AddTodo from '../containers/AddTodo'
 import VisibleTodoList from '../containers/VisibleTodoList'
 import { connect } from 'react-redux'
-// import { getTodos } from '../actions'
+import { getTodos } from '../actions'
 
 
 class App extends React.Component {
@@ -21,9 +21,9 @@ class App extends React.Component {
     };
   }
 
-  // componentDidMount(){
-  //   this.props.dispatch(getTodos());
-  // }
+  componentDidMount(){
+    this.props.dispatch(getTodos());
+  }
 
   // <AddTodo />
   // <VisibleTodoList />
@@ -32,11 +32,12 @@ class App extends React.Component {
   render(){
     return (
       <View style={styles.container}>
-        <AddTodo style={styles.addtodo}/>
-        <VisibleTodoList />
-        <Text style={styles.textwrapper}>
-          hello there
-        </Text>
+        <View style={styles.addtodo}>
+          <AddTodo />
+        </View>
+        <View style={styles.todoswrapper}>
+          <VisibleTodoList />
+        </View>
       </View>
     );
   }
@@ -45,12 +46,12 @@ class App extends React.Component {
 let styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 60
+    marginTop: 10
   },
   addtodo: {
     flex: 1
   },
-  textwrapper: {
+  todoswrapper: {
     flex: 3
   }
 })

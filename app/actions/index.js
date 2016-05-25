@@ -27,22 +27,22 @@ export const toggleTodo = (id) => {
   };
 }
 
-// export const loadTodos = (todos) => {
-//   return {
-//     type: TYPES.LOAD_TODOS,
-//     todos
-//   }
-// }
+export const loadTodos = (todos) => {
+  return {
+    type: TYPES.LOAD_TODOS,
+    todos
+  }
+}
 
-// export function getTodos(){
-//   return function(dispatch){
-//     return fetch('http://192.168.99.100:3000/todos/')
-//     .then(response => response.json())
-//     .then(json => {
-//       dispatch(loadTodos(json));
-//     })
-//     .catch(err => {
-//       console.log('err: ',err);
-//     });
-//   }
-// }
+export function getTodos(){
+  return function(dispatch){
+    return fetch('http://192.168.99.100:3000/todos/')
+    .then(response => response.json())
+    .then(json => {
+      dispatch(loadTodos(json));
+    })
+    .catch(err => {
+      console.log('err: ',err);
+    });
+  }
+}
