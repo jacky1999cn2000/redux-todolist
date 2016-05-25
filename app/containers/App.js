@@ -7,7 +7,7 @@ import {
   View,
   TouchableHighlight
 } from 'react-native';
-// import Footer from './Footer'
+
 import AddTodo from '../containers/AddTodo'
 import VisibleTodoList from '../containers/VisibleTodoList'
 import { connect } from 'react-redux'
@@ -24,10 +24,6 @@ class App extends React.Component {
   componentDidMount(){
     this.props.dispatch(getTodos());
   }
-
-  // <AddTodo />
-  // <VisibleTodoList />
-  // <Footer />
 
   render(){
     return (
